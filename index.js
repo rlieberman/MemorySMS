@@ -55,6 +55,7 @@ app.get('/twilio-callback', function(request, response) {
     twiml.message('I am sorry to hear that.');
   } else {
     twiml.message('Say what?');
+    twiml.media('https://demo.twilio.com/owl.png');
   }
 
   //then you send a response
