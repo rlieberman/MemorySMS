@@ -33,7 +33,7 @@ app.use(express.static('public'));
 app.get('/twilio-callback', function(request, response) {
 
   //this is where you get the actual text, from the request object
-  console.log("request: " + request;
+  console.log("request: " + request);
   var msg = request.query.Body.toLowerCase(); 
 
   console.log("message: " + msg);
