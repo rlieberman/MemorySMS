@@ -19,10 +19,13 @@ var http = require('http') //http built in
 var server = http.Server(app); //make a server 
 server.listen(app.get('port')); //set up the server to listen to the port that your app is running on
 
+//set up a public folder where i can serve a static index.html page
+app.use(express.static('public'));
+
 //test to make sure routes are working
-app.get('/', function(req, res) {
-  res.send('ok'); //display content - return an index.html page, etc.
-});
+// app.get('/', function(req, res) {
+//   res.send('ok'); //display content - return an index.html page, etc.
+// });
 
 
 // set up routes - this is where stuff is actually happening
