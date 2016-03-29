@@ -66,7 +66,7 @@ app.get('/twilio-callback', function(request, response) {
   //then you send a response
   //encode the response as xml, then convert to a string, then send it back to the res object
   response.type('text/xml');
-  response.send(twiml);
+  response.send(twiml.toString());
 });
 
 
