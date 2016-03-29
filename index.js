@@ -2,8 +2,13 @@
 //https://github.com/sslover/designing-for-data-personalization/blob/master/week10/Twilio-SMS-setup.md
 //https://github.com/lmccart/itp-convo-comp/tree/master/Twilio/twilio_text_server
 
+//DOCUMENTATION
 // node-twilio docs: http://twilio.github.io/twilio-node/
 // TwiML xml response format docs: https://www.twilio.com/docs/api/twiml 
+
+//TO RUN CODE
+//in terminal, cd to folder
+//type heroku logs --tail to see the log of what's coming in to the heroku app
 
 // npm install twilio
 var twilio = require('twilio');
@@ -54,8 +59,8 @@ app.get('/twilio-callback', function(request, response) {
   } else if (msg == 'i feel bad') {
     twiml.message('I am sorry to hear that.');
   } else {
-    twiml.message('Say what?');
-    twiml.media('https://demo.twilio.com/owl.png');
+    // twiml.message('Say what?');
+    twiml.message('https://demo.twilio.com/owl.png');
   }
 
   //then you send a response
