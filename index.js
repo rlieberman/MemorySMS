@@ -60,13 +60,13 @@ app.get('/twilio-callback', function(request, response) {
     twiml.message('I am sorry to hear that.');
   } else {
     // twiml.message('Say what?');
-    twiml.message.media('images/prompt1_05.jpg');
+    twiml.message('images/prompt1_05.jpg');
   }
 
   //then you send a response
   //encode the response as xml, then convert to a string, then send it back to the res object
   response.type('text/xml');
-  response.send(twiml.toString());
+  response.send(twiml);
 });
 
 
