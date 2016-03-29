@@ -1,6 +1,6 @@
-//set up on heroku 
-//to do this on twilio, set up heroku endpoint under messaging
-
+//Thanks to Sam Slover and Lauren McCarthy
+//https://github.com/sslover/designing-for-data-personalization/blob/master/week10/Twilio-SMS-setup.md
+//https://github.com/lmccart/itp-convo-comp/tree/master/Twilio/twilio_text_server
 
 // node-twilio docs: http://twilio.github.io/twilio-node/
 // TwiML xml response format docs: https://www.twilio.com/docs/api/twiml 
@@ -33,7 +33,7 @@ app.use(express.static('public'));
 app.get('/twilio-callback', function(request, response) {
 
   //this is where you get the actual text, from the request object
-  console.log("request: " + request.query);
+  console.log("request: " + request;
   var msg = request.query.Body.toLowerCase(); 
 
   console.log("message: " + msg);
