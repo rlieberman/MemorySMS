@@ -1,5 +1,3 @@
-//next steps -- 
-//test locally
 //set up on heroku 
 //to do this on twilio, set up heroku endpoint under messaging
 
