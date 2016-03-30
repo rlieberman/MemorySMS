@@ -18,6 +18,9 @@ var twilio = require('twilio');
 var express = require('express');
 var app = express();
 
+//require firebase
+var Firebase = require('firebase');
+
 //setting up which port you listen on, here it's local but eventually do this with heroku
 app.set('port', process.env.PORT || 3000); //look for an environment variable called port, set 3000 default
 var http = require('http') //http built in
@@ -27,9 +30,9 @@ server.listen(app.get('port')); //set up the server to listen to the port that y
 //set up a public folder where i can serve a static index.html page
 app.use(express.static('public'));
 
-//require firebase and create a new global reference
-var Firebase = require("firebase");
-var myFirebaseRef = new Firebase("https://boiling-torch-5856.firebaseio.com/");
+//create a new global reference
+
+var myFirebaseRef = new Firebase('https://boiling-torch-5856.firebaseio.com/');
 
 
 //test to make sure routes are working
