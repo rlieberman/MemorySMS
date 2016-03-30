@@ -69,6 +69,3 @@ app.get('/twilio-callback', function(request, response) {
     response.type('text/xml');
     response.send(twiml.toString());
 });
-});
-
-
