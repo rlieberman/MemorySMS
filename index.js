@@ -27,7 +27,8 @@ server.listen(app.get('port')); //set up the server to listen to the port that y
 //set up a public folder where i can serve a static index.html page
 app.use(express.static('public'));
 
-//create a new global reference to Firebase
+//require firebase and create a new global reference
+var Firebase = require("firebase");
 var myFirebaseRef = new Firebase("https://boiling-torch-5856.firebaseio.com/");
 
 
