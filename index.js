@@ -59,8 +59,10 @@ app.get('/twilio-callback', function(request, response) {
   } else if (msg == 'i feel bad') {
     twiml.message('I am sorry to hear that.');
   } else { //prepare the twiml
-    twiml.message('testing right back at you!');
-    console.log(typeof(twiml.message));
+    // twiml.message('testing right back at you!');
+    twiml.message(function(){
+      this.body('testing right back at you!');
+    });
   }
 
   // //passing this to twiml.message did not work
