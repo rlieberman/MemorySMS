@@ -60,6 +60,7 @@ app.get('/twilio-callback', function(request, response) {
     twiml.message('I am sorry to hear that.');
   } else { //prepare the twiml
     twiml.message('testing right back at you!');
+    console.log(typeof(twiml.message));
   }
 
   // //passing this to twiml.message did not work
