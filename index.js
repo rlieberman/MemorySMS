@@ -75,9 +75,9 @@ app.get('/twilio-callback', function(request, response) {
     twiml.message('I am sorry to hear that.');
   } else { //prepare the twiml
     // twiml.message('testing right back at you!');
-    twiml.message(function(){ //this works but not when you try to send an image
+    twiml.message(function(){ //this works but not when you try to send an image using this.media
       this.body('testing right back at you!');
-      this.media('http://animals.sandiegozoo.org/sites/default/files/juicebox_slides/owl_horned.jpg');
+      // this.media('http://animals.sandiegozoo.org/sites/default/files/juicebox_slides/owl_horned.jpg');
     });
   }
 
