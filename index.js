@@ -59,11 +59,14 @@ app.get('/twilio-callback', function(request, response) {
   } else if (msg == 'i feel bad') {
     twiml.message('I am sorry to hear that.');
   } else { //prepare the twiml
-    twiml.message(function() {
-        this.body('Trust Pound!');
-        this.media('http://i.imgur.com/Act0Q.gif');
-    });
+    twiml.message('testing right back at you!');
   }
+
+  // //passing this to twiml.message did not work
+  // function() {
+  //       this.body('Trust Pound!');
+  //       this.media('http://i.imgur.com/Act0Q.gif');
+  //   }
 
     // Render an XML response
     response.type('text/xml');
