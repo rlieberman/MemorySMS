@@ -31,7 +31,6 @@ server.listen(app.get('port')); //set up the server to listen to the port that y
 app.use(express.static('public'));
 
 //create a new global reference
-
 var myFirebaseRef = new Firebase('https://boiling-torch-5856.firebaseio.com/');
 
 
@@ -78,6 +77,7 @@ app.get('/twilio-callback', function(request, response) {
     // twiml.message('testing right back at you!');
     twiml.message(function(){ //this works but not when you try to send an image
       this.body('testing right back at you!');
+      this.media('http://animals.sandiegozoo.org/sites/default/files/juicebox_slides/owl_horned.jpg');
     });
   }
 
