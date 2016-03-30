@@ -62,6 +62,7 @@ app.get('/twilio-callback', function(request, response) {
     // twiml.message('testing right back at you!');
     twiml.message(function(){
       this.body('testing right back at you!');
+      this.media('http://i.imgur.com/Act0Q.gif');
     });
   }
 
