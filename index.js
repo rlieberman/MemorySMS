@@ -74,11 +74,11 @@ app.get('/twilio-callback', function(request, response) {
   } else if (msg == 'i feel bad') {
     twiml.message('I am sorry to hear that.');
   } else { //prepare the twiml
-    twiml.message('testing right back at you!');
-    // twiml.message(function(){ //this works but not when you try to send an image using this.media
-    //   this.body('testing right back at you!');
-      // this.media('http://animals.sandiegozoo.org/sites/default/files/juicebox_slides/owl_horned.jpg');
-    // });
+    // twiml.message('testing right back at you!');
+    twiml.message(function(){ //this works but not when you try to send an image using this.media
+      this.body('testing right back at you!');
+      this.media('http://animals.sandiegozoo.org/sites/default/files/juicebox_slides/owl_horned.jpg');
+    });
   }
 
   // //passing this to twiml.message did not work
