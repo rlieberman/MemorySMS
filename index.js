@@ -27,6 +27,10 @@ server.listen(app.get('port')); //set up the server to listen to the port that y
 //set up a public folder where i can serve a static index.html page
 app.use(express.static('public'));
 
+//create a new global reference to Firebase
+var myFirebaseRef = new Firebase("https://boiling-torch-5856.firebaseio.com/");
+
+
 //test to make sure routes are working
 // app.get('/', function(req, res) {
 //   res.send('ok'); //display content - return an index.html page, etc.
@@ -53,6 +57,14 @@ app.get('/twilio-callback', function(request, response) {
   //here, create a new response object
   var twiml = new twilio.TwimlResponse();
   
+  //send the content of the incoming message to firebase, send it as an object
+  myFirebaseRef.push({
+    promptNum: "no prompt number in the sms version",
+    memory: msg
+      
+  });
+
+
   //here you determine what the content of your response will be
   if (msg == 'i feel good') {
     twiml.message('I am glad to hear that.'); //twiml.message is how you create a response 
@@ -60,9 +72,8 @@ app.get('/twilio-callback', function(request, response) {
     twiml.message('I am sorry to hear that.');
   } else { //prepare the twiml
     // twiml.message('testing right back at you!');
-    twiml.message(function(){
+    twiml.message(function(){ //this works but not when you try to send an image
       this.body('testing right back at you!');
-      this.media('http://i.imgur.com/Act0Q.gif');
     });
   }
 
@@ -72,7 +83,7 @@ app.get('/twilio-callback', function(request, response) {
   //       this.media('http://i.imgur.com/Act0Q.gif');
   //   }
 
-    // Render an XML response
-    response.type('text/xml');
-    response.send(twiml.toString());
+  // Render an XML response
+  response.type('text/xml');
+  response.send(twiml.toString());
 });
