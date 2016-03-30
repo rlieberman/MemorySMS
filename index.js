@@ -58,17 +58,17 @@ app.get('/twilio-callback', function(request, response) {
     twiml.message('I am glad to hear that.'); //twiml.message is how you create a response 
   } else if (msg == 'i feel bad') {
     twiml.message('I am sorry to hear that.');
-  } else { //prepare the twiml response
+  } else { //prepare the twiml
     twiml.message(function() {
-        this.body('Say what?');
-        this.media('images/prompt1_05.jpg');
+        this.body('Trust Pound!');
+        this.media('http://i.imgur.com/Act0Q.gif');
     });
   }
 
-  //then you send a response
-  //encode the response as xml, then convert to a string, then send it back to the res object
-  response.type('text/xml');
-  response.send(twiml.toString());
+    // Render an XML response
+    response.type('text/xml');
+    response.send(twiml.toString());
+});
 });
 
 
