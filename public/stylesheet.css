@@ -1,39 +1,46 @@
 body {
   padding:0px;
   margin:0;
-  background:#262626;
-  font-family: 'Dosis', sans-serif;
-  letter-spacing: 1px;
+  background:#1a1a1a;
+/*  background: url('bg.png') bottom center no-repeat,
+  #1a1a1a ;*/
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 3px;
   font-size: 14px;
+  text-transform:uppercase;
   color: white;
+  text-align:center;
 }
 
 
-#title{
-  width:800px;
-  margin-top: 50px;
+#title {
+  width: 500px;
   margin-left: auto ;
   margin-right: auto ;
+  font-weight: 300;
+  font-size:26px;
+  font-weight:bold;
+  letter-spacing:4px;
+  color: #1a1a1a;
+  background: white;
+  padding: 20px;
+  opacity:.6;
 }
 
 #container {
-  width: 800px;
+  width: 1000px;
   padding: 50px;
   margin-left: auto ;
   margin-right: auto ;
+  height:100%;
 }
 
-h1 {
+.instructions {
   font-weight: 300;
-  font-size:40px;
+  font-size:64px;
   letter-spacing:2px;
-  text-align:center;
-  text-transform:uppercase;
+
 }
 
-p {
-  font-weight: 300;
-  font-size:20px;
-  font-weight:bold;
-}
+
 
