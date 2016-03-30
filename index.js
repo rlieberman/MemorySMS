@@ -58,9 +58,11 @@ app.get('/twilio-callback', function(request, response) {
     twiml.message('I am glad to hear that.'); //twiml.message is how you create a response 
   } else if (msg == 'i feel bad') {
     twiml.message('I am sorry to hear that.');
-  } else {
-    // twiml.message('Say what?');
-    twiml.message('images/prompt1_05.jpg');
+  } else { //prepare the twiml response
+    twiml.message(function() {
+        this.body('Say what?');
+        this.media('images/prompt1_05.jpg');
+    });
   }
 
   //then you send a response
